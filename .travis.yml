@@ -6,7 +6,7 @@ before-install:
         - docker build -t prashanthreddy023/hello .
 
 script:
-        - docker run prashanthreddy023/hello
+        - docker run prashanthreddy023/hello npm test
 
 after-success:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
