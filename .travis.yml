@@ -1,0 +1,13 @@
+sudo : required
+
+services:
+        - docker
+before-install:
+        - docker run prashanthreddy023/hello .
+
+script:
+        - docker run prashanthreddy/hello
+
+after-success:
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+        - docker push prashanthreddy023/hello
