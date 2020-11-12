@@ -3,11 +3,11 @@ sudo : required
 services:
         - docker
 before-install:
-        - docker run prashanthreddy023/hello .
+        - docker run prashanthreddy023/docker .
 
 script:
-        - docker run prashanthreddy023/hello
+        - docker run prashanthreddy023/docker
 
 after-success:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-        - docker push prashanthreddy023/hello
+        - docker push prashanthreddy023/docker
